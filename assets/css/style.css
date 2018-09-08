@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
+
+* {
+    font-family: 'Press Start 2P', 'Times New Roman', Times, serif;
+    font-size: 20px;
+    letter-spacing: 2px;
+}
+
+body {
+    position: relative;
+    color: aqua;
+    background: black;    
+}
+
+h2 {
+    font-size: 50px;
+}
+
+div {
+    text-align: center;
+}
+
+.main {
+    position: relative;
+    margin: 0;
+    font-size: 150px;
+    line-height: 1;
+}
+
+.main::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-right: 300px;
+}
+
+.videoGames {
+    position: absolute;
+    z-index: 20;
+    margin: 0;
+    font-size: 150px;
+    color: red;
+}
+
+#container {
+    position: absolute;
+    top: 300px;
+    left: 500px;
+}
+
+#gameSection {
+    float: left;
+    width: 300px;
+    height: 500px;
+    padding: 20px;
+    margin-bottom: 50px;
+    border: 10px solid white;
+}
