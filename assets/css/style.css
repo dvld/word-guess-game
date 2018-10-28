@@ -1,8 +1,7 @@
-/* @import url('https://fonts.googleapis.com/css?family=Megrim'); */
 
-* {
-  
-}
+/* elements */
+/* ____________________________________ */
+
 body {
   font-family: "Megrim", 'Times New Roman', Times, serif;
   text-align: center;
@@ -14,6 +13,18 @@ body {
   color: white;
 }
 
+p {
+  margin: 0;
+}
+
+/* ____________________________________ */
+/* end elements */
+
+
+
+/* classes */
+/* ____________________________________ */
+
 .masthead h1 {
   font-size: 96px;
 }
@@ -22,8 +33,31 @@ body {
   font-size: 26px;
 }
 
+/* ____________________________________ */
+/* end classes */
 
 
 
+/* ids */
+/* ____________________________________ */
+
+
+
+/* ____________________________________ */
+/* end ids */
+
+
+
+/* jQuery */
+/* ____________________________________ */
+@media only screen and (max-width: 768px) {
+  .masthead h1 {
+    font-size: 48px;
+  }
+
+  .container {
+    font-size: 20px;
+  }
+}
 
 
