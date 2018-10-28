@@ -1,58 +1,29 @@
-@import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
+/* @import url('https://fonts.googleapis.com/css?family=Megrim'); */
 
 * {
-    font-family: 'Press Start 2P', 'Times New Roman', Times, serif;
-    font-size: 20px;
-    letter-spacing: 2px;
+  
 }
-
 body {
-    position: relative;
-    color: aqua;
-    background: black;    
+  font-family: "Megrim", 'Times New Roman', Times, serif;
+  text-align: center;
+  background-image: url("https://i.imgur.com/4wVAW9g.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: 25%;
+  font-weight: bolder;
+  color: white;
 }
 
-h2 {
-    font-size: 40px;
+.masthead h1 {
+  font-size: 96px;
 }
 
-div {
-    text-align: center;
+.container {
+  font-size: 26px;
 }
 
-.main {
-    position: relative;
-    margin: 0;
-    font-size: 150px;
-    line-height: 1;
-}
 
-.main::before {
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding-right: 300px;
-}
 
-.videoGames {
-    position: absolute;
-    z-index: 20;
-    margin: 0;
-    font-size: 150px;
-    color: red;
-}
 
-#container {
-    position: absolute;
-    top: 300px;
-    left: 500px;
-}
 
-#gameSection {
-    float: left;
-    width: 300px;
-    height: 500px;
-    padding: 20px;
-    margin-bottom: 50px;
-    border: 10px solid white;
-}
+
