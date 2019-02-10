@@ -9,8 +9,8 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-position-y: 25%;
-  font-weight: bolder;
-  color: white;
+  font-weight: 900;
+  color: black;
 }
 
 p {
@@ -31,6 +31,7 @@ p {
 
 .container {
   font-size: 26px;
+  /* background-color: rgba(rgb(202, 202, 202), 0.5); */
 }
 
 /* ____________________________________ */
@@ -40,7 +41,6 @@ p {
 
 /* ids */
 /* ____________________________________ */
-
 
 
 /* ____________________________________ */

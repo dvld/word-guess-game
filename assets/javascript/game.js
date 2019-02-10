@@ -1,65 +1,63 @@
 // init object
 let possibleWords = [
 
-  
+  {
+    img: 'not-zelda.png',
+    answer: "link",
+    statement: "His name is Link!",
+    sound: "assets/sounds/OOT_YoungLink_StrongAttack2.wav"
+  },
 
-    {
-      img: 'not-zelda.jpg',
-      answer: "Link",
-      statement: "His name is Link!",
-      sound: "assets/sounds/OOT_YoungLink_StrongAttack2.wav"
-    },
+  {
+    img: "zelda.png",
+    answer: "zelda",
+    statement: "She's Zelda!",
+    sound: ""
+  },
 
-    {
-      img: "zelda.png",
-      answer: "Zelda",
-      statement: "She's Zelda!",
-      sound: ""
-    },
+  {
+    img: "navi.jpg",
+    answer: "navi",
+    statement: "Hello!?",
+    sound: ""
+  },
 
-    {
-      img: "navi.jpg",
-      answer: "Navi",
-      statement: "Hello!?",
-      sound: ""
-    },
+  {
+    img: "master-sword.png",
+    answer: "the master sword",
+    statement: "The Blade of Evil's Bane",
+    sound: ""
+  },
 
-    {
-      img: "master-sword.png",
-      answer: "The Master Sword",
-      statement: "The Blade of Evil's Bane",
-      sound: ""
-    },
+  {
+    img: "rupees.jpg",
+    answer: "rupees",
+    statement: "Money! Money! Money!",
+    sound: ""
+  },
 
-    {
-      img: "rupees.jpg",
-      answer: "Rupees",
-      statement: "Money! Money! Money!",
-      sound: ""
-    },
+  {
+    img: "epona.png",
+    answer: "epona",
+    statement: "Link's trusty steed",
+    sound: ""
+  },
 
-    {
-      img: "epona.png",
-      answer: "Epona",
-      statement: "Link's trusty steed",
-      sound: ""
-    },
+  {
+    img: "goron.png",
+    answer: "goron",
+    statement: "These dude's eat rocks!",
+    sound: ""
+  },
 
-    {
-      img: "goron.png",
-      answer: "Goron",
-      statement: "These dude's eat rocks!",
-      sound: ""
-    },
+  {
+    img: "zora.png",
+    answer: "zora",
+    statement: "Royal fish people",
+    sound: ""
+  }
 
-    {
-      img: "zora.png",
-      answer: "Zora",
-      statement: "Royal fish people",
-      sound: ""
-    }
-  
-  ];
+];
 
 
 let gameState = {
@@ -75,8 +73,8 @@ let missesAllowed = 9;
 
 // _________________________________________
 
-document.addEventListener('keypress', (event) => {
-  let keyName = event.key.toUpperCase();
+document.addEventListener('keypress', event => {
+  let keyName = event.key.toLowerCase();
 
   if (gameState.started) {
     handleGuess(keyName);
@@ -85,7 +83,7 @@ document.addEventListener('keypress', (event) => {
   }
 });
 
-const handleGuess = (keyName) => {
+const handleGuess = keyName => {
   if (
     gameState.letterGuessed.indexOf(keyName) >= 0
     ||
@@ -109,15 +107,15 @@ const updateState = () => {
   document.getElementById('word').textContent = addSpaces(gameState.displayString);
 
   document.getElementById('remainingGuesses').textContent = gameState.remainingGuesses;
-  
+
   document.getElementById('lettersGuessed').textContent = addSpaces(gameState.letterGuessed);
 
   document.getElementById('wins').textcontent = gameState.wins + ' / ' + gameState.round;
 };
 
-const addSpaces = (s) => {
+const addSpaces = s => {
   let newStr = ''
-  for (i = 0; i < s.length; i++) {
+  for (let i = 0; i < s.length; i++) {
     newStr += s.charAt(i);
     newStr += String.fromCharCode(160);
   }
@@ -129,7 +127,7 @@ const correctGuess = (keyName) => {
   let newDisplay = '';
   let word = possibleWords[gameState.round].answer;
 
-  for (i = 0; i < (word.length); i++) {
+  for (let i = 0; i < word.length; i++) {
     if (word.charAt(i) === keyName) {
       newDisplay += keyName;
     } else {
@@ -139,7 +137,7 @@ const correctGuess = (keyName) => {
   gameState.displayString = newDisplay;
 }
 
-const wrongGuess = (keyName) => {
+const wrongGuess = keyName => {
   gameState.letterGuessed += keyName;
   gameState.remainingGuesses--;
 }
@@ -149,9 +147,11 @@ const gameOver = () => {
   if (gameState.displayString.indexOf('_') < 0) {
     console.log('You win!');
 
-    document.getElementById('answer' + gameState.round).innerHTML = possibleWords[gameState.round].answer;
+    document.getElementById('answer').innerHTML = possibleWords[gameState.round].answer;
 
-    document.getElementById('img').src = possibleWords[gameState.round].img;
+    document.getElementById('img').innerhtml = "<p class='img' src='assets/images/" +
+    possibleWords[gameState.round].img + "' alt='" +
+    possibleWords[gameState.round].statement + "'>";
 
     gameState.round++;
     gameState.wins++;
@@ -186,10 +186,10 @@ const initializeGame = () => {
   updateState();
 }
 
-const initDisplay = (answer) => {
+const initDisplay = answer => {
   let displayText = '';
 
-  for (i = 0; i < answer.length; i++) {
+  for (let i = 0; i < answer.length; i++) {
     if (answer.charAt(i) == ' ') {
       displayText += ' ';
     } else {
