@@ -18,4 +18,8 @@
 *Javascript
 
 ---
-#### Developed By Niko Roberts
+### Developed By Niko Roberts
+
+#### Deployed with Github pages
+
+* https://dvld.github.io/word-guess-game/
